@@ -40,16 +40,6 @@ require("bufferline").setup({
 		indicator = {
 			style = "icon",
 		},
-		offsets = {
-			{
-				filetype = "NvimTree",
-				highlight = "Directory",
-				text_align = "left",
-			},
-			{
-				filetype = "snacks_layout_box",
-			},
-		},
 		custom_filter = function(buf_number)
 			local buf_name = vim.fn.bufname(buf_number)
 
