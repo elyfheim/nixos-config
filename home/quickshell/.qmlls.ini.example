@@ -1,0 +1,5 @@
+
+[General]
+no-cmake-calls=true
+buildDir="examplepath"
+importPaths="examplepath"
