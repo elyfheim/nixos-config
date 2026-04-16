@@ -9,6 +9,7 @@
     name = "capitaine-cursors";
     size = 20;
   };
+
   programs.bash = {
     enable = true;
     profileExtra = ''

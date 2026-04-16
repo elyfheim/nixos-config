@@ -33,7 +33,61 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  environment.systemPackages = with pkgs; [
+    # terminal
+    kitty
+    fish
+    starship
+
+    # development tools
+    zig
+    gcc
+    gnumake
+    nodejs
+    nixpkgs-unstable.legacyPackages."x86_64-linux".tree-sitter
+
+    # language servers & formatters
+    lua-language-server
+    stylua
+    nil
+    typescript-language-server
+    clang-tools
+    kdePackages.qtdeclarative # qml language server
+
+    # tools
+    ripgrep
+    wget
+    git
+    fastfetch
+    unzip
+    p7zip
+    tokei
+    file
+    fzf
+    zoxide
+
+    # mount drives
+    udisks2
+    udiskie
+
+    # file manager
+    yazi
+
+    # editor
+    vim
+    neovim
+
+    # browser
+    brave
+
+    # desktop
+    awww
+    quickshell
+  ];
+
   services.getty.autologinUser = "jun";
+
+  services.udisks2.enable = true;
 
   programs.hyprland = {
     enable = true;
@@ -92,6 +146,14 @@
       };
     };
   };
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
   # Set your time zone.
   time.timeZone = "Asia/Jakarta";
 
@@ -116,47 +178,6 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    # terminal
-    kitty
-    fish
-    starship
-
-    # development tools
-    zig
-    gcc
-    gnumake
-    nodejs
-    nixpkgs-unstable.legacyPackages."x86_64-linux".tree-sitter
-
-    # language servers & formatters
-    lua-language-server
-    stylua
-    nil
-    typescript-language-server
-    clang-tools
-    kdePackages.qtdeclarative # qml language server
-
-    # tools
-    ripgrep
-    wget
-    git
-    fastfetch
-    unzip
-    p7zip
-    tokei
-
-    # editor
-    vim
-    neovim
-
-    # browser
-    brave
-
-    # desktop
-    awww
-    quickshell
-  ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
