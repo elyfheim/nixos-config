@@ -73,6 +73,9 @@
     # file manager
     yazi
 
+    # audio related
+    pwvucontrol
+
     # editor
     vim
     neovim
@@ -88,6 +91,7 @@
   services.getty.autologinUser = "jun";
 
   services.udisks2.enable = true;
+  services.upower.enable = true;
 
   programs.hyprland = {
     enable = true;
@@ -183,6 +187,7 @@
     nerd-fonts.fira-code
     noto-fonts
     noto-fonts-cjk-sans
+    inter
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
