@@ -1,6 +1,5 @@
 import Quickshell // for PanelWindow
 import QtQuick // for Text
-import QtQuick.Controls
 import Quickshell.Services.UPower
 
 PanelWindow {
@@ -40,7 +39,7 @@ PanelWindow {
         Text {
             id: battery
             anchors.centerIn: parent
-            text: (UPower.displayDevice.percentage) * 100 + "%"
+            text: Math.round(UPower.displayDevice.percentage * 100) + "%"
             font.pointSize: 10
             font.family: "Inter"
             color: "#e0def4"
