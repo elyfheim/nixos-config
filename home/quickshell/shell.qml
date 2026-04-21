@@ -1,6 +1,8 @@
 import Quickshell // for PanelWindow
 import QtQuick // for Text
+import QtQuick.Layouts
 import Quickshell.Services.UPower
+import Quickshell.Hyprland
 
 PanelWindow {
     anchors {
@@ -11,15 +13,23 @@ PanelWindow {
 
     implicitHeight: 30
 
-    Text {
-        text: "hyprland"
+    RowLayout {
         anchors.left: parent.left
         anchors.verticalCenter: parent.verticalCenter
-
-        font.pointSize: 10
-        font.family: "Inter"
-        color: "#e0def4"
         anchors.leftMargin: 16
+        spacing: 6
+        Repeater {
+            model: 6
+            Rectangle {
+                property bool isActive: Hyprland.focusedWorkspace?.id === index + 1
+
+                width: 12
+                height: 12
+                radius: 6
+
+                color: isActive ? "#9ccfd8" : "#524f67"
+            }
+        }
     }
 
     Rectangle {
