@@ -18,10 +18,37 @@ ShellRoot {
 
         implicitHeight: 30
 
-        RowLayout {
+        Rectangle {
+            id: logo
+            property var showPopup: false
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
-            anchors.leftMargin: 16
+            anchors.leftMargin: 8
+            width: 30
+            height: 30
+            radius: 4
+
+            color: showPopup ? "#6a6a86" : "#00000000"
+            Text {
+                id: logotext
+                font.pointSize: 14
+                anchors.centerIn: parent
+                color: "#9ccfd8"
+                text: "\uf313"
+            }
+            MouseArea {
+                anchors.fill: parent
+                cursorShape: Qt.PointingHandCursor
+                hoverEnabled: true
+                onEntered: logo.showPopup = true
+                onExited: logo.showPopup = false
+            }
+        }
+
+        RowLayout {
+            anchors.left: logo.right
+            anchors.leftMargin: 8
+            anchors.verticalCenter: parent.verticalCenter
             spacing: 6
             Repeater {
                 model: 6
@@ -39,12 +66,13 @@ ShellRoot {
 
         Rectangle {
             id: batterysection
+            visible: UPower.displayDevice.isLaptopBattery
 
             property bool showPopup: false
             anchors.right: time.left
             anchors.verticalCenter: parent.verticalCenter
             color: showPopup ? "#6a6a86" : "#00000000"
-            implicitHeight: battery.implicitHeight + 4
+            height: 30
             implicitWidth: battery.implicitWidth + 8
             radius: 4
             anchors.rightMargin: 6
@@ -53,9 +81,6 @@ ShellRoot {
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
                 hoverEnabled: true
-                onClicked: () => {
-                    batterysection.showPopup = !batterysection.showPopup;
-                }
                 onEntered: batterysection.showPopup = true
                 onExited: batterysection.showPopup = false
             }
