@@ -43,39 +43,61 @@ ShellRoot {
             property bool showPopup: false
             anchors.right: time.left
             anchors.verticalCenter: parent.verticalCenter
-            color: hoverHandler.hovered ? "#6a6a86" : "#00000000"
+            color: showPopup ? "#6a6a86" : "#00000000"
             implicitHeight: battery.implicitHeight + 4
             implicitWidth: battery.implicitWidth + 8
             radius: 4
-            anchors.rightMargin: 4
-
-            HoverHandler {
-                id: hoverHandler
-            }
+            anchors.rightMargin: 6
 
             MouseArea {
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
+                hoverEnabled: true
                 onClicked: () => {
-                    console.log("whaat");
                     batterysection.showPopup = !batterysection.showPopup;
                 }
+                onEntered: batterysection.showPopup = true
+                onExited: batterysection.showPopup = false
             }
 
             Text {
                 id: battery
+                property var batteryInfo: {
+                    const percentage = Math.round(UPower.displayDevice.percentage * 100);
+                    if (percentage < 25) {
+                        return {
+                            icon: "\uf244",
+                            color: "#eb6f92"
+                        };
+                    } else if (percentage < 50) {
+                        return {
+                            icon: "\uf243",
+                            color: "#f6c177"
+                        };
+                    } else if (percentage < 75) {
+                        return {
+                            icon: "\uf242",
+                            color: "#9ccfd8"
+                        };
+                    } else {
+                        return {
+                            icon: "\uf240",
+                            color: "#9ccfd8"
+                        };
+                    }
+                }
+                text: batteryInfo.icon
                 anchors.centerIn: parent
-                text: Math.round(UPower.displayDevice.percentage * 100) + "%"
-                font.pointSize: 10
+                font.pointSize: 14
                 font.family: "Inter"
-                color: "#e0def4"
+                color: batteryInfo.color
             }
 
             PopupWindow {
                 anchor.window: toplevel
                 anchor.rect.x: batterysection.x
                 anchor.rect.y: anchor.window.height + 4
-                visible: hoverHandler.hovered
+                visible: batterysection.showPopup
                 mask: Region {
                     item: rect
                 }
@@ -85,6 +107,7 @@ ShellRoot {
 
                 Rectangle {
                     id: rect
+                    property var percentage: Math.round(UPower.displayDevice.percentage * 100)
                     color: "#F0191724"
                     implicitWidth: batterytext.width + 24
                     implicitHeight: batterytext.height + 12
@@ -93,11 +116,11 @@ ShellRoot {
                     Text {
                         id: batterytext
                         anchors.centerIn: parent
-                        text: "Battery: " + Math.round(UPower.displayDevice.percentage * 100) + "%"
+                        text: `Battery${!UPower.onBattery ? " (charging)" : ""}: ${rect.percentage}%`
                         font.pointSize: 10
                         font.family: "Inter"
                         font.weight: Font.Medium
-                        color: "#e0def4"
+                        color: !UPower.onBattery ? rect.percentage === 100 ? "#9ccfd8" : "#f6c177" : "#e0def4"
                     }
                 }
             }
@@ -232,7 +255,7 @@ ShellRoot {
                     Text {
                         anchors.centerIn: parent
                         width: parent.width - 24
-                        font.pointSize: 18
+                        font.pointSize: 16
                         font.family: "Inter"
                         font.weight: Font.Medium
                         color: "#e0def4"
