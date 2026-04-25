@@ -3,7 +3,6 @@ import QtQuick
 import QtQuick.Layouts
 
 PanelWindow {
-    id: topbar
     anchors {
         top: true
         left: true
@@ -24,6 +23,7 @@ PanelWindow {
 
         RowLayout {
             Layout.alignment: Qt.AlignRight
+            MemoryUsage {}
             Battery {}
             ClockWidget {}
         }
