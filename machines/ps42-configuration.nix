@@ -75,6 +75,8 @@
 
     # audio related
     pwvucontrol
+    mpd
+    rmpc
 
     # editor
     vim
