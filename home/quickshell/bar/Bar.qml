@@ -23,8 +23,12 @@ PanelWindow {
 
         RowLayout {
             Layout.alignment: Qt.AlignRight
+            spacing: 2
             MemoryUsage {}
             Battery {}
+            Rectangle {
+                Layout.preferredWidth: 4
+            }
             ClockWidget {}
         }
     }

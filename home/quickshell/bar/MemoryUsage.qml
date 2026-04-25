@@ -6,7 +6,7 @@ Rectangle {
 
     property bool showPopup: false
     color: showPopup ? "#6a6a86" : "#00000000"
-    width: 60
+    width: 54
     height: 30
     radius: 4
 
@@ -20,12 +20,13 @@ Rectangle {
 
     Text {
         id: memory
+        anchors.verticalCenterOffset: 1
         anchors.centerIn: parent
         text: `\uefc5   ${SystemInfo.memoryUsagePercentage}`
-                color: "#c4a7e7" 
-    font.pointSize: 10
-    font.weight: Font.Medium
-    font.family: "Inter"
+        color: "#c4a7e7"
+        font.pointSize: 10
+        font.weight: Font.Medium
+        font.family: "Inter"
     }
 
     PopupWindow {
@@ -50,7 +51,7 @@ Rectangle {
                 font.pointSize: 10
                 font.family: "Inter"
                 font.weight: Font.Medium
-                color: "#c4a7e7" 
+                color: "#c4a7e7"
             }
         }
     }

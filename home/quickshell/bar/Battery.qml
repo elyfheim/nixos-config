@@ -24,6 +24,7 @@ Rectangle {
     Text {
         id: battery
         anchors.centerIn: parent
+        anchors.verticalCenterOffset: 1
         property var batteryInfo: {
             const percentage = Math.round(UPower.displayDevice.percentage * 100);
             if (percentage < 25) {
