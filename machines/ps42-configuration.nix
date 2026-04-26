@@ -6,7 +6,6 @@
   config,
   lib,
   pkgs,
-  nixpkgs-unstable,
   ...
 }:
 
@@ -44,7 +43,7 @@
     gcc
     gnumake
     nodejs
-    nixpkgs-unstable.legacyPackages."x86_64-linux".tree-sitter
+    tree-sitter
 
     # language servers & formatters
     lua-language-server
@@ -153,7 +152,7 @@
     };
   };
 
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   services.pipewire = {
     enable = true;

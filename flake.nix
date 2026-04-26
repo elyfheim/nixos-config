@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "nixpkgs/staging-next";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,14 +12,12 @@
   outputs =
     {
       nixpkgs,
-      nixpkgs-unstable,
       home-manager,
       ...
     }:
     {
       nixosConfigurations.ps42 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit nixpkgs-unstable; };
         modules = [
           ./machines/ps42-configuration.nix
           home-manager.nixosModules.home-manager
