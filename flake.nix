@@ -25,7 +25,22 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.jun = import ./machines/ps42.nix;
+              users.elyfheim = import ./machines/ps42.nix;
+              backupFileExtension = "backup";
+            };
+          }
+        ];
+      };
+      nixosConfigurations.m8 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./machines/m8-configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.elyfheim = import ./machines/m8.nix;
               backupFileExtension = "backup";
             };
           }
