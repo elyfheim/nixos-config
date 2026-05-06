@@ -7,12 +7,17 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mangowm = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
       nixpkgs,
       home-manager,
+      mangowm,
       ...
     }:
     {
@@ -35,6 +40,7 @@
         system = "x86_64-linux";
         modules = [
           ./machines/m8-configuration.nix
+          mangowm.nixosModules.mango
           home-manager.nixosModules.home-manager
           {
             home-manager = {

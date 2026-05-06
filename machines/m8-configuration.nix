@@ -100,6 +100,8 @@
     withUWSM = true;
   };
 
+  programs.mango.enable = true;
+
   programs.ssh = {
     startAgent = true;
     extraConfig = ''

@@ -1,10 +1,10 @@
 import Quickshell // for PanelWindow
+import Quickshell.Io
 import QtQuick // for Text
 import QtQuick.Layouts
 
 import QtQuick.Controls
 import Quickshell.Services.UPower
-import Quickshell.Hyprland
 import Quickshell.Wayland
 
 Scope {
@@ -139,11 +139,10 @@ Scope {
         }
     }
 
-    GlobalShortcut {
-        appid: "quickshell"
-        name: "app_launcher"
+    IpcHandler {
+        target: "launcher"
 
-        onPressed: () => {
+        function toggle(): void {
             applauncher.visible = !applauncher.visible;
             if (applauncher.visible) {
                 input.text = "";

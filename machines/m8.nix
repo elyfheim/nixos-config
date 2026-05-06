@@ -12,10 +12,13 @@
 
   programs.bash = {
     enable = true;
+    # profileExtra = ''
+    #   			if uwsm check may-start; then
+    #   				exec uwsm start hyprland-uwsm.desktop
+    #   			fi
+    #   		'';
     profileExtra = ''
-      			if uwsm check may-start; then
-      				exec uwsm start hyprland-uwsm.desktop
-      			fi
+      			exec mango
       		'';
   };
 
@@ -25,11 +28,14 @@
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/fish/config.fish";
   home.file.".config/hypr".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/hypr";
+  home.file.".config/mango".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/mango";
   home.file.".config/kitty".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/kitty";
   home.file.".config/nvim".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/nvim";
   home.file.".config/quickshell".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/quickshell";
-
+  home.file.".config/mpd/mpd.conf".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/mpd/mpd.conf";
 }
