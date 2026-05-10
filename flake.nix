@@ -25,12 +25,13 @@
         system = "x86_64-linux";
         modules = [
           ./machines/ps42-configuration.nix
+          mangowm.nixosModules.mango
           home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.elyfheim = import ./machines/ps42.nix;
+              users.jun = import ./machines/ps42.nix;
               backupFileExtension = "backup";
             };
           }

@@ -94,13 +94,17 @@
   services.udisks2.enable = true;
   services.upower.enable = true;
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    withUWSM = true;
-  };
-
   programs.mango.enable = true;
+  programs.uwsm = {
+    enable = true;
+    waylandCompositors = {
+      mango = {
+        prettyName = "Mango";
+        comment = "Wayland Compositor";
+        binPath = "/run/current-system/sw/bin/mango";
+      };
+    };
+  };
 
   programs.ssh = {
     startAgent = true;
