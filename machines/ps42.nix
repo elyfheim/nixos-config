@@ -23,7 +23,6 @@
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/starship.toml";
   home.file.".config/fish/config.fish".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/fish/config.fish";
-
   home.file.".config/fastfetch/config.jsonc".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/fastfetch/config.jsonc";
   home.file.".config/mango".source =

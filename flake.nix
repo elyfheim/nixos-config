@@ -1,5 +1,5 @@
 {
-  description = "Hyprland + NixOS Flake";
+  description = "Elyfheim's NixOS Flake (MangoWC)";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
