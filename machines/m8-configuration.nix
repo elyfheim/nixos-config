@@ -64,6 +64,7 @@
     file
     fzf
     zoxide
+    yt-dlp
 
     # mount drives
     udisks2
