@@ -34,7 +34,7 @@
 
   environment.systemPackages = with pkgs; [
     # terminal
-    kitty
+    ghostty
     fish
     starship
 
@@ -43,6 +43,7 @@
     gcc
     gnumake
     nodejs
+    pnpm
     tree-sitter
 
     # language servers & formatters
@@ -50,8 +51,10 @@
     stylua
     nil
     typescript-language-server
+    astro-language-server
     clang-tools
     kdePackages.qtdeclarative # qml language server
+    zls
 
     # tools
     ripgrep

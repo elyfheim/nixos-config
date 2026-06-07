@@ -34,7 +34,7 @@
 
   environment.systemPackages = with pkgs; [
     # terminal
-    kitty
+    ghostty
     fish
     starship
 
