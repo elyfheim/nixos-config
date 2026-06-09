@@ -5,8 +5,8 @@ Rectangle {
     id: root
 
     property bool showPopup: false
-    color: showPopup ? "#6a6a86" : "#00000000"
-    width: 54
+    color: showPopup ? "#4c566a" : "#00000000"
+    width: 30
     height: 30
     radius: 4
 
@@ -20,13 +20,11 @@ Rectangle {
 
     Text {
         id: memory
-        anchors.verticalCenterOffset: 1
         anchors.centerIn: parent
-        text: `\uefc5   ${SystemInfo.memoryUsagePercentage}`
-        color: "#c4a7e7"
-        font.pointSize: 10
+        text: `${SystemInfo.memoryUsagePercentage}`
+        color: "#8fbcbb"
+        font.pointSize: 9
         font.weight: Font.Medium
-        font.family: "Inter"
     }
 
     PopupWindow {
@@ -39,7 +37,7 @@ Rectangle {
 
         Rectangle {
             id: rect
-            color: "#F0191724"
+            color: "#3b4252"
             implicitWidth: memorytext.width + 24
             implicitHeight: memorytext.height + 12
             radius: 6
@@ -48,10 +46,9 @@ Rectangle {
                 id: memorytext
                 anchors.centerIn: parent
                 text: `Memory Usage: ${SystemInfo.memoryUsageDetail}`
-                font.pointSize: 10
-                font.family: "Inter"
+                font.pointSize: 9
                 font.weight: Font.Medium
-                color: "#c4a7e7"
+                color: "#8fbcbb"
             }
         }
     }

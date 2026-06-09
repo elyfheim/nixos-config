@@ -1,7 +1,7 @@
-background = #191d24
 font-size = 11
 font-feature = -calt, -liga, -dlig
 command = /run/current-system/sw/bin/fish --login
+theme = Nord
 window-padding-x = 6
 window-padding-y = 6
 
@@ -12,3 +12,4 @@ keybind = ctrl+w=close_surface
 keybind = ctrl+enter=new_split:down
 keybind = ctrl+c=copy_to_clipboard
 keybind = ctrl+v=paste_from_clipboard
+

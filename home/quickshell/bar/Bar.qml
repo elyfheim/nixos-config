@@ -33,5 +33,5 @@ PanelWindow {
         }
     }
 
-    color: "#F0191724"
+    color: "#2e3440"
 }

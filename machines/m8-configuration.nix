@@ -34,6 +34,7 @@
 
   environment.systemPackages = with pkgs; [
     # terminal
+    kitty
     ghostty
     fish
     starship
@@ -90,6 +91,7 @@
 
     # desktop
     awww
+    swaybg
     quickshell
   ];
 

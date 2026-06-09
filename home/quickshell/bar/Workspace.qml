@@ -13,11 +13,11 @@ RowLayout {
         Rectangle {
             property bool isActive: currentWorkspace === index + 1
 
-            width: 12
-            height: 12
-            radius: 6
+            width: 10
+            height: 10
+            radius: 5
 
-            color: isActive ? "#9ccfd8" : "#524f67"
+            color: isActive ? "#88c0d0" : "#4c566a"
         }
     }
 

@@ -10,9 +10,9 @@ Rectangle {
     color: showPopup ? "#6a6a86" : "#00000000"
     Text {
         id: logotext
-        font.pointSize: 14
+        font.pointSize: 12
         anchors.centerIn: parent
-        color: "#9ccfd8"
+        color: "#88c0d0"
         text: "\uf313"
     }
     MouseArea {
