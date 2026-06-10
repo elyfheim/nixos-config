@@ -93,12 +93,34 @@
     awww
     swaybg
     quickshell
+
+    # screenshot
+    grim
+    slurp
+    satty
+
+    # clipboard
+    wl-clipboard
+
+    # multimedia
+    tdf
+    mpv
+    vlc
+    qimgv
   ];
 
   services.getty.autologinUser = "elyfheim";
 
   services.udisks2.enable = true;
   services.upower.enable = true;
+
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-pipewire-audio-capture
+    ];
+  };
 
   programs.mango.enable = true;
   programs.uwsm = {

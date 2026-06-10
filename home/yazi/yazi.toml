@@ -1,0 +1,19 @@
+[opener]
+play = [
+	{ run ="vlc %s", orphan = true },
+]
+open = [
+	{ run = "qimgv %s", orphan = true },
+]
+edit = [
+	{ run = "nvim %s", block = true },
+]
+pdf_open = [
+	{ run = "tdf %s", block = true },
+]
+
+[open]
+prepend_rules = [
+	{mime ="text/*", use = "edit" },
+	{ url = "*.pdf", use = "pdf_open" },
+]
