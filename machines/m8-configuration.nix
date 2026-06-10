@@ -69,6 +69,7 @@
     fzf
     zoxide
     yt-dlp
+    btop
 
     # mount drives
     udisks2
