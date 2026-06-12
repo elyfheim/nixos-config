@@ -86,6 +86,7 @@
     # editor
     vim
     neovim
+    helix
 
     # browser
     brave
@@ -108,6 +109,7 @@
     mpv
     vlc
     qimgv
+    libresprite
   ];
 
   services.getty.autologinUser = "elyfheim";
