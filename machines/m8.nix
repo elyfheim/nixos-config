@@ -37,6 +37,8 @@
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/yazi";
   home.file.".config/mpd/mpd.conf".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/mpd/mpd.conf";
+  home.file.".config/hyfetch.json".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/hyfetch.json";
   home.file."scripts".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/scripts";
 }

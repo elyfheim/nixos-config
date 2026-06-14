@@ -62,6 +62,7 @@
     wget
     git
     fastfetch
+    hyfetch
     unzip
     p7zip
     tokei
