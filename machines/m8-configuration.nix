@@ -30,12 +30,17 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
   networking.networkmanager.enable = true;
 
   environment.systemPackages = with pkgs; [
     # terminal
     kitty
     ghostty
+    foot
     fish
     starship
 
@@ -45,6 +50,7 @@
     gnumake
     nodejs
     pnpm
+    typescript
     tree-sitter
 
     # language servers & formatters
@@ -71,6 +77,7 @@
     zoxide
     yt-dlp
     btop
+    bluetui
 
     # mount drives
     udisks2
@@ -184,6 +191,7 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
     noto-fonts
     noto-fonts-cjk-sans
     inter

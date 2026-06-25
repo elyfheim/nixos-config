@@ -4,7 +4,6 @@ command = /run/current-system/sw/bin/fish --login
 theme = Nord
 window-padding-x = 6
 window-padding-y = 6
-
 keybind = ctrl+j=goto_split:next
 keybind = ctrl+k=goto_split:previous
 
