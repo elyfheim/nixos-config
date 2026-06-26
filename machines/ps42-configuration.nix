@@ -39,6 +39,7 @@
 
   environment.systemPackages = with pkgs; [
     # terminal
+    foot
     ghostty
     fish
     starship
