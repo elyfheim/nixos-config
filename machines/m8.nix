@@ -27,8 +27,6 @@
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/fastfetch/config.jsonc";
   home.file.".config/mango".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/mango";
-  home.file.".config/ghostty".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/ghostty";
   home.file.".config/foot".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/foot";
   home.file.".config/nvim".source =
