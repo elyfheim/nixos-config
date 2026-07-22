@@ -25,6 +25,14 @@
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
 
+  # bluetooth stuff
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+  services.blueman.enable = true;
+
   environment.systemPackages = with pkgs; [
     # terminal
     foot
@@ -34,7 +42,12 @@
     # development tools
     zig
     gcc
+    clang
+    rustc
+    cargo
     gnumake
+    emscripten
+    tectonic
     nodejs
     pnpm
     typescript
@@ -47,6 +60,7 @@
     typescript-language-server
     astro-language-server
     clang-tools
+    rust-analyzer
     kdePackages.qtdeclarative # qml language server
     zls
 
@@ -66,7 +80,6 @@
     btop
     bluetui
     eza
-    kanban
 
     # file manager
     yazi
@@ -158,6 +171,21 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc # Japanese Input Engine
+      fcitx5-bamboo # Korean Input Engine
+    ];
+  };
+
+  # 2. Add necessary locales
+  i18n.supportedLocales = [
+    "en_US.UTF-8/UTF-8"
+    "ja_JP.UTF-8/UTF-8"
+    "ko_KR.UTF-8/UTF-8"
+  ];
 
   # Configure keymap in X11
   services.xserver.xkb = {
