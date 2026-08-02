@@ -17,3 +17,6 @@ prepend_rules = [
 	{mime ="text/*", use = "edit" },
 	{ url = "*.pdf", use = "pdf_open" },
 ]
+
+[mgr] 
+show_hidden = true
