@@ -9,7 +9,7 @@ edit = [
 	{ run = "nvim %s", block = true },
 ]
 pdf_open = [
-	{ run = "tdf %s", block = true },
+	{ run = "brave %s", block = true },
 ]
 
 [open]

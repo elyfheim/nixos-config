@@ -61,7 +61,9 @@
     astro-language-server
     clang-tools
     rust-analyzer
+    rustfmt
     kdePackages.qtdeclarative # qml language server
+    prettierd
     zls
 
     # tools
