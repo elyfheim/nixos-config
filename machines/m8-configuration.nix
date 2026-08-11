@@ -33,6 +33,12 @@
 
   services.blueman.enable = true;
 
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "artix-games-launcher"
+    ];
+
   environment.systemPackages = with pkgs; [
     # terminal
     foot
@@ -45,6 +51,7 @@
     clang
     rustc
     cargo
+    rustlings
     gnumake
     emscripten
     tectonic
@@ -82,6 +89,7 @@
     btop
     bluetui
     eza
+    mitmproxy
 
     # file manager
     yazi
@@ -117,6 +125,12 @@
     vlc
     qimgv
     libresprite
+
+    # game
+    artix-games-launcher
+
+    # anki
+    anki
   ];
 
   services.getty.autologinUser = "elyfheim";
