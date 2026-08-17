@@ -37,6 +37,7 @@
     pkg:
     builtins.elem (lib.getName pkg) [
       "artix-games-launcher"
+      "osu-lazer-bin"
     ];
 
   environment.systemPackages = with pkgs; [
@@ -128,6 +129,7 @@
 
     # game
     artix-games-launcher
+    osu-lazer-bin
 
     # anki
     anki
@@ -190,10 +192,11 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.inputMethod = {
-    enabled = "fcitx5";
+    type = "fcitx5";
+    enable = true;
     fcitx5.addons = with pkgs; [
-      fcitx5-mozc # Japanese Input Engine
-      fcitx5-bamboo # Korean Input Engine
+      fcitx5-mozc
+      fcitx5-hangul
     ];
   };
 
