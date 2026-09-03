@@ -57,6 +57,7 @@
     emscripten
     tectonic
     nodejs
+    nodemon
     pnpm
     typescript
     tree-sitter
