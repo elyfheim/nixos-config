@@ -50,6 +50,8 @@
     zig
     gcc
     clang
+    ghc
+    cabal-install
     rustc
     cargo
     rustlings
@@ -66,6 +68,7 @@
     lua-language-server
     stylua
     nil
+    haskell-language-server
     typescript-language-server
     astro-language-server
     clang-tools
