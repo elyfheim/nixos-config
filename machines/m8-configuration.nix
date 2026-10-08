@@ -92,9 +92,8 @@
     zoxide
     yt-dlp
     btop
-    bluetui
     eza
-    mitmproxy
+    pdfarranger
 
     # file manager
     yazi
@@ -107,7 +106,6 @@
     # editor
     vim
     neovim
-    helix
 
     # browser
     brave
@@ -137,6 +135,12 @@
 
     # anki
     anki
+
+    # libreoffice
+    libreoffice
+
+    # e-books
+    calibre
   ];
 
   services.getty.autologinUser = "elyfheim";
